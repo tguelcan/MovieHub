@@ -38,10 +38,11 @@ const config = {
 			}
 		},
 		fontFamily: {
-			sans: ['Oswald', ...fontFamily.sans]
+			sans: ['Roboto', ...fontFamily.sans],
+			secondary: ['Roboto Condensed', ...fontFamily.sans]
 		}
 	},
-	plugins: []
+	plugins: [require('@tailwindcss/line-clamp')]
 };
 
 module.exports = config;

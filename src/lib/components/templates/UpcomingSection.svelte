@@ -14,15 +14,10 @@
 	onMount(() => (movies = upcoming));
 </script>
 
-<Swiper
-	pagination={{ clickable: true }}
-	spaceBetween={10}
-	slidesPerView={3}
-	on:slideChange={() => console.log('slide change')}
->
+<Swiper spaceBetween={10} slidesPerView={3}>
 	{#each movies.results as movie, index}
 		<SwiperSlide>
-			<div in:fade={{ duration: 300, delay: index * 100 }}><MoviePreview {movie} {index} /></div>
+			<div in:fade={{ duration: 300, delay: index * 100 }}><MoviePreview {movie} /></div>
 		</SwiperSlide>
 	{/each}
 </Swiper>

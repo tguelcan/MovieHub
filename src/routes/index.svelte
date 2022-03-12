@@ -19,13 +19,20 @@
 <script>
 	import PopularSection from '$components/templates/PopularSection.svelte';
 	import UpcomingSection from '$components/templates/UpcomingSection.svelte';
+	import HeroSection from '$components/templates/HeroSection.svelte';
 
 	export let popular, upcoming;
 </script>
 
+<div>
+	<HeroSection collection={upcoming} />
+</div>
+
 <div class="container">
-	<h2 class="text-2xl sm:text-3xl my-4 dark:text-light">Discover the Popular Movies</h2>
+	<h2 class="text-2xl sm:text-3xl my-4 dark:text-light font-secondary font-bold">
+		Discover Popular Movies
+	</h2>
 	<PopularSection {popular} />
-	<h2 class="text-2xl sm:text-3xl my-4 dark:text-light">Upcoming</h2>
+	<h2 class="text-2xl sm:text-3xl my-4 dark:text-light font-secondary font-bold">Upcoming</h2>
 	<UpcomingSection {upcoming} />
 </div>
