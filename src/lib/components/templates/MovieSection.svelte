@@ -6,11 +6,11 @@
 	import MoviePreview from '$components/elements/MoviePreview.svelte';
 
 	import 'swiper/css';
+	export let collection;
 
 	let innerWidth;
 	let slidesPerView;
-	export let collection;
-	export let movies = {
+	let movies = {
 		results: []
 	};
 

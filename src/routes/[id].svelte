@@ -9,6 +9,7 @@
 			Movie.getCredits(pageId)
 		]);
 		return {
+			maxage: 0,
 			props: {
 				movie: movie.value.ok && (await movie.value.json()),
 				similar: similar.value.ok && (await similar.value.json()),
@@ -22,7 +23,11 @@
 	import MovieSection from '$components/templates/MovieSection.svelte';
 	import CastSection from '$components/templates/CastSection.svelte';
 	import MovieDetailHero from '$components/elements/MovieDetailHero.svelte';
+
 	export let movie, similar, credits;
+
+	console.log(movie);
+	console.log(credits);
 </script>
 
 <svelte:head>

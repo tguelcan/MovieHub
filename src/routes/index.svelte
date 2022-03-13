@@ -22,6 +22,10 @@
 	export let popular, upcoming;
 </script>
 
+<svelte:head>
+	<title>MOVIE:HUB</title>
+</svelte:head>
+
 <div class="mb-6">
 	<HeroSection collection={upcoming} />
 </div>

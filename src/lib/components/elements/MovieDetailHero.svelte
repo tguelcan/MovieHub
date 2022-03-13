@@ -16,12 +16,14 @@
 		src="https://image.tmdb.org/t/p/w300{movie.poster_path}"
 		alt="poster"
 	/>
-	<div class="flex flex-col  dark:text-light">
-		<span class="text-sm">{movie.tagline}</span>
+	<div class="flex flex-col dark:text-light">
+		<div class="text-sm mt-4 sm:mt-0">{movie.tagline}</div>
 		<div class="text-4xl font-secondary font-bold">
 			{movie.title}
 		</div>
-		<div class="text-xs flex items-center space-x-6 mt-2 text-gray">
+		<div
+			class="text-xs flex items-center justify-between sm:justify-start space-x-6 mt-2 text-gray"
+		>
 			<div class="flex space-x-1 items-center">
 				{#each movie.genres as genre, index}
 					<div>{genre.name}</div>
