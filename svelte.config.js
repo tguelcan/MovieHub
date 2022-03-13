@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-node';
 import svg from '@poppanator/sveltekit-svg';
 import preprocess from 'svelte-preprocess';
 import { resolve } from 'path';
@@ -14,11 +14,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter({
-			pages: 'docs',
-			assets: 'docs',
-			fallback: null
-		}),
+		adapter: adapter(),
 
 		vite: {
 			ssr: {

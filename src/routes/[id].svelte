@@ -23,7 +23,6 @@
 	import CastSection from '$components/templates/CastSection.svelte';
 	import MovieDetailHero from '$components/elements/MovieDetailHero.svelte';
 	export let movie, similar, credits;
-	console.log(credits);
 </script>
 
 <svelte:head>
