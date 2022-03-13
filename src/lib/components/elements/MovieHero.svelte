@@ -9,7 +9,7 @@
 	};
 </script>
 
-<a href="/" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
+<a href="/{movie.id}" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
 	<div class="relative group">
 		<div class="absolute flex flex-col justify-between  w-full h-full z-20 text-light">
 			<Rating value={movie.vote_average} />
@@ -21,13 +21,12 @@
 				<p class="font-light max-w-xl line-clamp-3 leading-snug">{movie.overview}</p>
 			</div>
 		</div>
-		<div class="bg-gradient-to-tr from-dark to-transparent absolute z-10 w-full h-full" />
 		<div
-			class="bg-gradient-to-tr from-dark to-gray-light mix-blend-multiply absolute z-10 w-full h-full hover:opacity-0"
+			class="bg-gradient-to-tr from-dark to-transparent mix-blend-multiply absolute z-10 w-full h-full transition-all group-hover:opacity-50"
 		/>
 
 		<img
-			class="object-cover object-center bg-light w-full h-80 sm:h-96 group-hover:scale-105 transition-all duration-200"
+			class="object-cover object-center bg-light w-full h-80 sm:h-[32rem] group-hover:scale-105 transition-all duration-200"
 			src="https://image.tmdb.org/t/p/original{movie.backdrop_path}"
 			alt="poster"
 		/>

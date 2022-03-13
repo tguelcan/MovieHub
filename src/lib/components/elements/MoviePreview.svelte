@@ -9,7 +9,7 @@
 	};
 </script>
 
-<a href="/" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
+<a href="/{movie.id}" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
 	<div class="overflow-hidden relative group">
 		<div class="absolute flex flex-col justify-between  w-full h-full z-20 text-light">
 			<Rating value={movie.vote_average} />

@@ -17,7 +17,7 @@
 	onMount(() => (movies = collection));
 </script>
 
-<div class="sm:container">
+<div class="xl:container">
 	<Swiper
 		modules={[EffectFade, Autoplay]}
 		effect="fade"
@@ -25,6 +25,7 @@
 			delay: 5000,
 			disableOnInteraction: false
 		}}
+		speed={750}
 		slidesPerView={1}
 	>
 		{#each movies.results as movie}
