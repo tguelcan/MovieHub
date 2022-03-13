@@ -4,11 +4,9 @@
 
 <a href="/{person.id}" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
 	<div class="overflow-hidden relative group">
-		<div class="absolute flex flex-col justify-between  w-full h-full z-20 text-light">
-			<div class="p-6 flex flex-col space-y-1 ">
-				<div class="font-secondary font-medium transition-all ">
-					{person.name}
-				</div>
+		<div class="absolute flex flex-col justify-end w-full h-full z-20 text-light">
+			<div class="font-secondary text-center p-4 font-medium transition-all ">
+				{person.name}
 			</div>
 		</div>
 		<div
