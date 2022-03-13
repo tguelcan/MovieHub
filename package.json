@@ -1,7 +1,7 @@
 {
 	"name": "movie",
 	"version": "0.0.1",
-	"main": "build/",
+	"main": "dist/",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
@@ -13,7 +13,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
 		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
-		"start": "node build/index"
+		"start": "node dist/index"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.19.1",
