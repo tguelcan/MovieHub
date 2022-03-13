@@ -17,20 +17,22 @@
 
 <script>
 	import MovieSection from '$components/templates/MovieSection.svelte';
+	import MovieDetailHero from '$components/elements/MovieDetailHero.svelte';
 	export let movie, similar;
 	console.log(movie);
-	console.log(similar);
 </script>
 
 <svelte:head>
 	<title>{movie.title}</title>
 </svelte:head>
 
-<div class="container">
-	Movies
-	{movie}
-	<h2 class="text-2xl sm:text-3xl my-4 dark:text-light font-secondary font-bold select-none">
-		Similar Movies
-	</h2>
-	<MovieSection collection={similar} />
+<div>
+	<div class="container">
+		<MovieDetailHero {movie} />
+
+		<h2 class="text-2xl sm:text-3xl my-4 dark:text-light font-secondary font-bold select-none">
+			Similar Movies
+		</h2>
+		<MovieSection collection={similar} />
+	</div>
 </div>

@@ -22,17 +22,21 @@
 	export let popular, upcoming;
 </script>
 
-<div>
+<div class="mb-6">
 	<HeroSection collection={upcoming} />
 </div>
 
-<div class="container">
-	<h2 class="text-2xl sm:text-3xl my-4 dark:text-light font-secondary font-bold select-none">
-		Discover Popular Movies
-	</h2>
-	<MovieSection collection={popular} />
-	<h2 class="text-2xl sm:text-3xl my-4 dark:text-light font-secondary font-bold select-none">
-		Upcoming
-	</h2>
-	<MovieSection collection={upcoming} />
+<div class="container space-y-6">
+	<div>
+		<h2 class="text-2xl sm:text-3xl my-2 dark:text-light font-secondary font-bold select-none">
+			Discover Popular Movies
+		</h2>
+		<MovieSection collection={popular} />
+	</div>
+	<div>
+		<h2 class="text-2xl sm:text-3xl my-2 dark:text-light font-secondary font-bold select-none">
+			Upcoming
+		</h2>
+		<MovieSection collection={upcoming} />
+	</div>
 </div>

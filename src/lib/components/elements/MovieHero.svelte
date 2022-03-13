@@ -12,7 +12,9 @@
 <a href="/{movie.id}" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
 	<div class="relative group">
 		<div class="absolute flex flex-col justify-between  w-full h-full z-20 text-light">
-			<Rating value={movie.vote_average} />
+			<div class="p-6">
+				<Rating value={movie.vote_average} />
+			</div>
 			<div class="p-6 flex flex-col space-y-1">
 				<div class="text-6xl font-secondary font-bold group-hover:text-6xl transition-all">
 					{movie.title}
