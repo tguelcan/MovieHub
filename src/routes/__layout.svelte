@@ -3,7 +3,8 @@
 	import FooterElement from '$components/bootstrap/FooterElement.svelte';
 	import NavigationElement from '$components/bootstrap/NavigationElement.svelte';
 
-	import '../app.css';
+	import '$lib/assets/css/app.css';
+	import '$lib/assets/css/typing.css';
 </script>
 
 <svelte:head>

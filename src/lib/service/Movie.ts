@@ -43,6 +43,15 @@ export const movies = {
 		} catch (err) {
 			return err;
 		}
+	},
+	getCredits: async (id) => {
+		try {
+			return await fetch(`${baseUrl}/movie/${id}/credits`, {
+				headers
+			});
+		} catch (err) {
+			return err;
+		}
 	}
 };
 

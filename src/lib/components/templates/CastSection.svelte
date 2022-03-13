@@ -3,30 +3,28 @@
 	import { fade } from 'svelte/transition';
 
 	import { Swiper, SwiperSlide } from 'swiper/svelte';
-	import MoviePreview from '$components/elements/MoviePreview.svelte';
+	import CastPreview from '$components/elements/CastPreview.svelte';
 
 	import 'swiper/css';
 
 	let innerWidth;
 	let slidesPerView;
 	export let collection;
-	export let movies = {
-		results: []
-	};
+	export let cast = [];
 
 	const setSlidesPerView = async (w) => {
 		await tick();
 		if (w >= 1024) {
-			slidesPerView = 4;
+			slidesPerView = 8;
 		} else if (w >= 768) {
-			slidesPerView = 3;
+			slidesPerView = 5;
 		} else {
-			slidesPerView = 1.2;
+			slidesPerView = 3.2;
 		}
 	};
 
 	onMount(() => {
-		movies = collection;
+		cast = collection;
 	});
 
 	$: if (innerWidth) {
@@ -37,9 +35,9 @@
 <svelte:window bind:innerWidth />
 
 <Swiper spaceBetween={10} {slidesPerView}>
-	{#each movies.results as movie, index}
+	{#each cast as person, index}
 		<SwiperSlide>
-			<div in:fade={{ duration: 300, delay: index * 100 }}><MoviePreview {movie} /></div>
+			<div in:fade={{ duration: 300, delay: index * 100 }}><CastPreview {person} /></div>
 		</SwiperSlide>
 	{/each}
 </Swiper>
