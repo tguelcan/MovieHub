@@ -142,7 +142,7 @@
 					{#each response.results as movie, index}
 						<li
 							in:fade={{ duration: 300, delay: index * 100 }}
-							class="group cursor-pointer select-none px-4 py-2 flex hover:bg-gray hover:text-dark hover:bg-opacity-10 hover:text-white flex space-x-2 items-center transition-all"
+							class="group cursor-pointer select-none px-4 py-2 flex hover:bg-gray hover:text-dark dark:hover:text-light hover:bg-opacity-10 hover:text-white flex space-x-2 items-center transition-all"
 							id="option-{index + 1}"
 							role="option"
 							tabindex="-1"

@@ -21,7 +21,7 @@
 	import MovieSection from '$components/templates/MovieSection.svelte';
 	import HeroSection from '$components/templates/HeroSection.svelte';
 
-	export let popular, upcoming, discover;
+	export let upcoming, discover;
 </script>
 
 <svelte:head>
