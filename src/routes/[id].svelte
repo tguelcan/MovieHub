@@ -25,9 +25,6 @@
 	import MovieDetailHero from '$components/elements/MovieDetailHero.svelte';
 
 	export let movie, similar, credits;
-
-	console.log(movie);
-	console.log(credits);
 </script>
 
 <svelte:head>
@@ -35,8 +32,12 @@
 </svelte:head>
 
 <div>
+	<div class="bg-dark">
+		<div class="sm:container">
+			<MovieDetailHero {movie} />
+		</div>
+	</div>
 	<div class="container">
-		<MovieDetailHero {movie} />
 		<div class="mt-4">
 			<CastSection collection={credits.cast} />
 		</div>

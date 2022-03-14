@@ -23,9 +23,9 @@
 		}
 	};
 
-	onMount(() => {
+	$: if (collection) {
 		cast = collection;
-	});
+	}
 
 	$: if (innerWidth) {
 		setSlidesPerView(innerWidth);

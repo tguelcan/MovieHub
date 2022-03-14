@@ -10,7 +10,7 @@
 	};
 </script>
 
-<div class="sm:flex items-top sm:space-x-4 z-20">
+<div class="sm:flex items-top sm:space-x-4 z-20 bg-dark py-6 text-white">
 	<img
 		class="h-48 sm:h-56 mt-1"
 		src="https://image.tmdb.org/t/p/w300{movie.poster_path}"
@@ -36,12 +36,14 @@
 		</div>
 		<div class="text-xs flex items-center space-x-1 text-gray font-medium">
 			<div>{getYear(movie.release_date)}</div>
-			<div class="flex items-center space-x-1 ">
+			<div class="flex items-center ">
 				<Icon src={Clock} class="w-3" />
 				<span>{movie.runtime}</span>
 			</div>
 		</div>
-		<p class="mt-2">{movie.overview}</p>
+		<div class="max-w-xl">
+			<p class="mt-2">{movie.overview}</p>
+		</div>
 		<div class="flex items-center space-x-4 text-xs text-gray mt-2">
 			{#if movie.homepage}
 				<div class="flex items-center space-x-1">

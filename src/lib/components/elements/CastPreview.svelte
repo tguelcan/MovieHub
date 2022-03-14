@@ -1,5 +1,10 @@
 <script>
 	export let person;
+	let image = '/img/mesh.png';
+
+	if (person?.profile_path) {
+		image = `https://image.tmdb.org/t/p/w500${person.profile_path}`;
+	}
 </script>
 
 <a href="/{person.id}" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
@@ -17,8 +22,9 @@
 		/>
 		<img
 			class="object-cover object-center bg-light w-full h-36 sm:h-48 group-hover:scale-105 transition-all duration-200"
-			src="https://image.tmdb.org/t/p/w500{person.profile_path}"
+			src={image}
 			alt={person.name}
+			on:error={(ev) => (ev.target.src = '/img/mesh.png')}
 		/>
 	</div>
 </a>

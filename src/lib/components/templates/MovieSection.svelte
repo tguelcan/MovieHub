@@ -25,9 +25,9 @@
 		}
 	};
 
-	onMount(() => {
+	$: if (collection) {
 		movies = collection;
-	});
+	}
 
 	$: if (innerWidth) {
 		setSlidesPerView(innerWidth);
