@@ -17,6 +17,15 @@ export const movies = {
 			return err;
 		}
 	},
+	getDiscover: async () => {
+		try {
+			return await fetch(`${baseUrl}/discover/movie`, {
+				headers
+			});
+		} catch (err) {
+			return err;
+		}
+	},
 	getUpcoming: async () => {
 		try {
 			return await fetch(`${baseUrl}/movie/upcoming`, {

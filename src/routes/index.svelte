@@ -2,24 +2,28 @@
 	import Movies from '$lib/service/Movie';
 	// @type {import('@sveltejs/kit').Load}
 	export async function load() {
-		const [popular, upcoming] = await Promise.allSettled([
+		const [popular, upcoming, discover] = await Promise.allSettled([
 			Movies.getPopular(),
-			Movies.getUpcoming()
+			Movies.getUpcoming(),
+			Movies.getDiscover()
 		]);
 		return {
 			props: {
 				popular: popular.value.ok && (await popular.value.json()),
-				upcoming: upcoming.value.ok && (await upcoming.value.json())
+				upcoming: upcoming.value.ok && (await upcoming.value.json()),
+				discover: discover.value.ok && (await discover.value.json())
 			}
 		};
 	}
 </script>
 
 <script>
+	import { fade } from 'svelte/transition';
+	import MoviePreview from '$components/elements/MoviePreview.svelte';
 	import MovieSection from '$components/templates/MovieSection.svelte';
 	import HeroSection from '$components/templates/HeroSection.svelte';
 
-	export let popular, upcoming;
+	export let popular, upcoming, discover;
 </script>
 
 <svelte:head>
@@ -38,5 +42,13 @@
 	<div>
 		<h2>Upcoming</h2>
 		<MovieSection collection={upcoming} />
+	</div>
+</div>
+<div class="container mt-2">
+	<h2>Discover</h2>
+	<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
+		{#each discover.results as movie, index}
+			<div in:fade={{ duration: 300, delay: index * 100 }}><MoviePreview {movie} /></div>
+		{/each}
 	</div>
 </div>
