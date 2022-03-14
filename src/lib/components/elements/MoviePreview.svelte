@@ -1,14 +1,6 @@
 <script>
 	import Rating from '$components/elements/Rating.svelte';
-
 	export let movie;
-
-	let image = '/img/mesh.png';
-
-	if (movie?.backdrop_path) {
-		image = `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`;
-	}
-
 	const getYear = (date) => {
 		const d = new Date(date);
 		return d.getFullYear();
@@ -17,12 +9,12 @@
 
 <a href="/{movie.id}" sveltekit:prefetch class=" bg-light dark:bg-gray-dark dark:text-gray-light">
 	<div class="overflow-hidden relative group">
-		<div class="absolute flex flex-col justify-between  w-full h-full z-20 text-light">
+		<div class="absolute flex flex-col justify-between w-full h-full z-20 text-light">
 			<div class="p-6">
 				<Rating value={movie.vote_average} />
 			</div>
 			<div class="p-6 flex flex-col space-y-1">
-				<div class="sm:text-lg font-secondary font-bold sm:group-hover:text-2xl transition-all">
+				<div class="sm:text-lg font-secondary font-bold transition-all">
 					{movie.title}
 				</div>
 				<div class="text-xs">{getYear(movie.release_date)}</div>
@@ -36,7 +28,7 @@
 		/>
 		<img
 			class="object-cover object-bottom bg-light w-full h-56 sm:h-48 group-hover:scale-105 transition-all duration-200"
-			src={image}
+			src="https://image.tmdb.org/t/p/w500{movie.backdrop_path}"
 			alt="poster"
 			on:error={(ev) => (ev.target.src = '/img/mesh.png')}
 		/>

@@ -1,16 +1,11 @@
 <script>
 	export let person;
-	let image = '/img/mesh.png';
-
-	if (person?.profile_path) {
-		image = `https://image.tmdb.org/t/p/w500${person.profile_path}`;
-	}
 </script>
 
 <a href="/person/{person.id}" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
 	<div class="overflow-hidden relative group">
 		<div class="absolute flex flex-col justify-end w-full h-full z-20 text-light">
-			<div class="font-secondary text-center px-4 font-medium transition-all text-sm sm:text-base">
+			<div class="font-secondary text-center px-4 font-bold transition-all text-sm sm:text-base">
 				{person.name}
 			</div>
 			<div class="font-secondary text-center pb-4 font-medium transition-all text-xs opacity-50">
@@ -25,7 +20,7 @@
 		/>
 		<img
 			class="object-cover object-center bg-light w-full h-36 sm:h-48 group-hover:scale-105 transition-all duration-200"
-			src={image}
+			src="https://image.tmdb.org/t/p/w500{person.profile_path}"
 			alt={person.name}
 			on:error={(ev) => (ev.target.src = '/img/mesh.png')}
 		/>

@@ -37,7 +37,7 @@
 	</div>
 </div>
 <div class="container mt-2">
-	<div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+	<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
 		{#each credits.cast as movie, index}
 			<div in:fade={{ duration: 300, delay: index * 100 }}><MoviePreview {movie} /></div>
 		{/each}

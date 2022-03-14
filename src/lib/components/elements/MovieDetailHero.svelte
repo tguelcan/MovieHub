@@ -15,6 +15,7 @@
 		class="h-48 sm:h-56 mt-1"
 		src="https://image.tmdb.org/t/p/w300{movie.poster_path}"
 		alt="poster"
+		on:error={(ev) => (ev.target.src = '/img/mesh.png')}
 	/>
 	<div class="flex flex-col dark:text-light">
 		<div class="text-sm mt-4 sm:mt-0">{movie.tagline}</div>
@@ -41,7 +42,7 @@
 				<span>{movie.runtime}</span>
 			</div>
 		</div>
-		<div class="max-w-xl">
+		<div class="max-w-2xl">
 			<p class="mt-2">{movie.overview}</p>
 		</div>
 		<div class="flex items-center space-x-4 text-xs text-gray mt-2">
