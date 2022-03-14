@@ -10,7 +10,7 @@
 	};
 </script>
 
-<div class="sm:flex items-top sm:space-x-4 z-20 bg-dark py-6 text-white">
+<div class="sm:flex items-top sm:space-x-4 z-20 bg-dark py-6 px-2 sm:px-0 text-white">
 	<img
 		class="h-48 sm:h-56 mt-1"
 		src="https://image.tmdb.org/t/p/w300{movie.poster_path}"

@@ -1,5 +1,5 @@
 <script>
-	import { onMount, tick } from 'svelte';
+	import { tick } from 'svelte';
 	import { fade } from 'svelte/transition';
 
 	import { Swiper, SwiperSlide } from 'swiper/svelte';

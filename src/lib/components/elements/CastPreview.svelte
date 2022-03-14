@@ -7,11 +7,14 @@
 	}
 </script>
 
-<a href="/{person.id}" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
+<a href="/person/{person.id}" class=" bg-light dark:bg-gray-dark dark:text-gray-light">
 	<div class="overflow-hidden relative group">
 		<div class="absolute flex flex-col justify-end w-full h-full z-20 text-light">
-			<div class="font-secondary text-center p-4 font-medium transition-all ">
+			<div class="font-secondary text-center px-4 font-medium transition-all text-sm sm:text-base">
 				{person.name}
+			</div>
+			<div class="font-secondary text-center pb-4 font-medium transition-all text-xs opacity-50">
+				{person.character}
 			</div>
 		</div>
 		<div
