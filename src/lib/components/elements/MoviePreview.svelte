@@ -28,7 +28,9 @@
 		/>
 		<img
 			class="object-cover object-bottom w-full h-56 sm:h-48 group-hover:scale-105 transition-all duration-200"
-			src="https://image.tmdb.org/t/p/w500{movie.backdrop_path}"
+			src={movie?.backdrop_path
+				? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+				: '/img/mesh.png'}
 			alt="poster"
 			on:error={(ev) => (ev.target.src = '/img/mesh.png')}
 		/>

@@ -33,11 +33,15 @@
 </script>
 
 <svelte:window bind:innerWidth />
-
-<Swiper spaceBetween={10} {slidesPerView}>
-	{#each cast as person, index}
-		<SwiperSlide>
-			<div in:fade={{ duration: 300, delay: index * 100 }}><CastPreview {person} /></div>
-		</SwiperSlide>
-	{/each}
-</Swiper>
+<div class="relative">
+	<div
+		class="absolute bg-gradient-to-l from-gray-light dark:from-gray-dark to-transparent h-full right-0 z-20 w-20"
+	/>
+	<Swiper spaceBetween={10} {slidesPerView}>
+		{#each cast as person, index}
+			<SwiperSlide>
+				<div in:fade={{ duration: 300, delay: index * 100 }}><CastPreview {person} /></div>
+			</SwiperSlide>
+		{/each}
+	</Swiper>
+</div>

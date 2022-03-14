@@ -20,7 +20,9 @@
 		/>
 		<img
 			class="object-cover object-center w-full h-36 sm:h-48 group-hover:scale-105 transition-all duration-200"
-			src="https://image.tmdb.org/t/p/w500{person.profile_path}"
+			src={person?.profile_path
+				? `https://image.tmdb.org/t/p/w500${person.profile_path}`
+				: '/img/mesh.png'}
 			alt={person.name}
 			on:error={(ev) => (ev.target.src = '/img/mesh.png')}
 		/>

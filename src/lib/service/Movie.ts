@@ -8,15 +8,6 @@ const headers = {
 };
 
 export const movies = {
-	getPopular: async () => {
-		try {
-			return await fetch(`${baseUrl}/movie/popular`, {
-				headers
-			});
-		} catch (err) {
-			return err;
-		}
-	},
 	getDiscover: async () => {
 		try {
 			return await fetch(`${baseUrl}/discover/movie`, {

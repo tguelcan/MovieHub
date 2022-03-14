@@ -2,14 +2,12 @@
 	import Movies from '$lib/service/Movie';
 	// @type {import('@sveltejs/kit').Load}
 	export async function load() {
-		const [popular, upcoming, discover] = await Promise.allSettled([
-			Movies.getPopular(),
+		const [upcoming, discover] = await Promise.allSettled([
 			Movies.getUpcoming(),
 			Movies.getDiscover()
 		]);
 		return {
 			props: {
-				popular: popular.value.ok && (await popular.value.json()),
 				upcoming: upcoming.value.ok && (await upcoming.value.json()),
 				discover: discover.value.ok && (await discover.value.json())
 			}
@@ -35,10 +33,6 @@
 </div>
 
 <div class="container space-y-6">
-	<div>
-		<h2>Discover Popular Movies</h2>
-		<MovieSection collection={popular} />
-	</div>
 	<div>
 		<h2>Upcoming</h2>
 		<MovieSection collection={upcoming} />
