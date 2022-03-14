@@ -42,7 +42,7 @@ const config = {
 			secondary: ['Roboto Condensed', ...fontFamily.sans]
 		}
 	},
-	plugins: [require('@tailwindcss/line-clamp')]
+	plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/forms')]
 };
 
 module.exports = config;
