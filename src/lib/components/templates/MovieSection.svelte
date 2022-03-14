@@ -20,6 +20,8 @@
 			slidesPerView = 4.3;
 		} else if (w >= 768) {
 			slidesPerView = 3.3;
+		} else if (w >= 480) {
+			slidesPerView = 2.3;
 		} else {
 			slidesPerView = 1.2;
 		}

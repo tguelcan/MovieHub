@@ -35,7 +35,7 @@
 					'bg-gradient-to-t from-dark to-transparent'} h-16 absolute w-full -mt-16"
 			/>
 			{#if longBiography}
-				<div class="text-center ">
+				<div class="text-center">
 					<button
 						class="text-sm text-gray hover:text-white transition-all"
 						on:click={() => (readMore = !readMore)}

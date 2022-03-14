@@ -52,6 +52,15 @@ export const movies = {
 		} catch (err) {
 			return err;
 		}
+	},
+	getSearch: async (q) => {
+		try {
+			return await fetch(`${baseUrl}/search/movie?query=${q}&include_adult=false`, {
+				headers
+			});
+		} catch (err) {
+			return err;
+		}
 	}
 };
 
