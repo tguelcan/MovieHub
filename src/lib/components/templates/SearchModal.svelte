@@ -131,7 +131,7 @@
 			<!-- Results, show/hide based on command palette state -->
 			{#if response.total_results}
 				<ul
-					class="max-h-72 scroll-py-2 overflow-y-auto py-2 text-sm text-gray divide-y divide-gray divide-opacity-10"
+					class="max-h-72 scroll-py-2 overflow-y-auto py-2 text-sm text-gray divide-y divide-gray divide-opacity-10 scrollbar-thin scrollbar-thumb-rounded-md scrollbar-thumb-primary scrollbar-track-light"
 					id="options"
 					role="listbox"
 				>
