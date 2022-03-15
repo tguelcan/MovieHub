@@ -1,10 +1,16 @@
 <script>
+	import { setContext } from 'svelte';
+	import { writable } from 'svelte/store';
+
 	import theme from '$lib/store/theme';
 	import FooterElement from '$components/bootstrap/FooterElement.svelte';
 	import NavigationElement from '$components/bootstrap/NavigationElement.svelte';
 
 	import '$lib/assets/css/app.css';
 	import '$lib/assets/css/typing.css';
+
+	const activeSearch = writable(false);
+	setContext('activeSearch', activeSearch);
 </script>
 
 <svelte:head>
@@ -16,7 +22,7 @@
 	/>
 </svelte:head>
 
-<div class="{$theme} flex flex-col h-screen">
+<div class="{$theme} flex flex-col h-screen {$activeSearch && 'overflow-y-hidden'}">
 	<div class="sticky top-0 z-50 bg-gray-light dark:bg-gray-dark">
 		<NavigationElement />
 	</div>

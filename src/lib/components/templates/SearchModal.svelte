@@ -4,13 +4,11 @@
 	import { sineInOut } from 'svelte/easing';
 	import { fade, fly } from 'svelte/transition';
 	import Movie from '$lib/service/Movie';
-	import { wheel } from '$lib/helper';
 
 	const dispatch = createEventDispatcher();
 
 	export let show = false;
 	let pending = false;
-	let scrollable = true;
 	let searchVal, timer;
 	let response = {
 		results: []
@@ -18,7 +16,6 @@
 
 	const reset = async () => {
 		await tick();
-		scrollable = true;
 		searchVal = null;
 		response = {
 			results: []
@@ -67,12 +64,11 @@
 	}
 
 	const init = (el) => {
-		scrollable = false;
 		el.focus();
 	};
 </script>
 
-<svelte:window on:keydown={handleWindowKeyDown} use:wheel={{ scrollable }} />
+<svelte:window on:keydown={handleWindowKeyDown} />
 {#if show}
 	<div
 		class="fixed inset-0 z-10 overflow-y-auto px-1 py-1 sm:p-6 md:p-20"
