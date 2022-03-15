@@ -71,7 +71,7 @@
 <svelte:window on:keydown={handleWindowKeyDown} />
 {#if show}
 	<div
-		class="fixed inset-0 z-10 overflow-y-auto px-1 py-1 sm:p-6 md:p-20"
+		class="fixed inset-0 z-10 overflow-y-auto px-1 pt-16 sm:p-6 md:p-20"
 		role="dialog"
 		aria-modal="true"
 	>
