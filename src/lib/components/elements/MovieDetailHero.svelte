@@ -6,23 +6,6 @@
 	import { isEmpty } from '$lib/helper';
 	export let movie, providers;
 
-	let provider = [];
-
-	if (!isEmpty(providers?.results)) {
-		if (providers.results?.GB && providers.results.GB.buy) {
-			provider = [
-				...provider,
-				...(providers?.results?.GB?.buy?.map((i) => ({ ...i, icon: CurrencyDollar })) || {})
-			];
-		}
-		if (providers.results?.GB && providers.results.GB.flatrate) {
-			provider = [
-				...provider,
-				...(providers?.results?.GB?.flatrate?.map((i) => ({ ...i, icon: Film })) || {})
-			];
-		}
-	}
-
 	const getYear = (date) => {
 		const d = new Date(date);
 		return d.getFullYear();
@@ -72,6 +55,6 @@
 				</div>
 			{/if}
 		</div>
-		<ProviderSection collection={provider} />
+		<ProviderSection collection={providers} />
 	</div>
 </div>
