@@ -1,9 +1,16 @@
 <script>
-	import { Icon, Clock, Link } from 'svelte-hero-icons';
+	import { Icon, Clock, Link, Film, CurrencyDollar } from 'svelte-hero-icons';
 
 	import Rating from '$components/elements/Rating.svelte';
+	import ProviderSection from '$components/templates/ProviderSection.svelte';
 
-	export let movie;
+	export let movie, providers;
+
+	const provider = [
+		...providers.results?.GB?.buy.map((i) => ({ ...i, icon: CurrencyDollar })),
+		...providers.results?.GB?.flatrate.map((i) => ({ ...i, icon: Film }))
+	];
+
 	const getYear = (date) => {
 		const d = new Date(date);
 		return d.getFullYear();
@@ -53,5 +60,6 @@
 				</div>
 			{/if}
 		</div>
+		<ProviderSection collection={provider} />
 	</div>
 </div>

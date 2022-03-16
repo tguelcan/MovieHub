@@ -61,6 +61,15 @@ export const movies = {
 		} catch (err) {
 			return err;
 		}
+	},
+	getProviders: async (id) => {
+		try {
+			return await fetch(`${baseUrl}/movie/${id}/watch/providers`, {
+				headers
+			});
+		} catch (err) {
+			return err;
+		}
 	}
 };
 
