@@ -3,13 +3,17 @@
 
 	import Rating from '$components/elements/Rating.svelte';
 	import ProviderSection from '$components/templates/ProviderSection.svelte';
-
+	import { isEmpty } from '$lib/helper';
 	export let movie, providers;
 
-	const provider = [
-		...providers.results?.GB?.buy.map((i) => ({ ...i, icon: CurrencyDollar })),
-		...providers.results?.GB?.flatrate.map((i) => ({ ...i, icon: Film }))
-	];
+	let provider = [];
+
+	if (!isEmpty(providers?.results)) {
+		provider = [
+			...(providers?.results?.GB?.buy?.map((i) => ({ ...i, icon: CurrencyDollar })) || {}),
+			...(providers?.results?.GB?.flatrate?.map((i) => ({ ...i, icon: Film })) || {})
+		];
+	}
 
 	const getYear = (date) => {
 		const d = new Date(date);
