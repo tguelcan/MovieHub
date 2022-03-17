@@ -10,8 +10,8 @@
 		return {
 			maxage: 0,
 			props: {
-				person: person.value.ok && (await person.value.json()),
-				credits: credits.value.ok && (await credits.value.json())
+				person: person.value?.ok && (await person.value.json()),
+				credits: credits.value?.ok && (await credits.value.json())
 			}
 		};
 	}

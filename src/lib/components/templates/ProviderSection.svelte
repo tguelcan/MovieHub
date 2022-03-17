@@ -24,12 +24,12 @@
 		</div>
 	{/each}
 	{#each p.buy as buy, index}
-		<div in:fade={{ duration: 300, delay: index * 100 }} class="mr-2 mt-2">
+		<div in:fade={{ duration: 300, delay: index * 100 }} out:fade class="mr-2 mt-2">
 			<ProviderPreview provider={{ ...buy, icon: CurrencyDollar }} />
 		</div>
 	{/each}
 	{#each p.rent as buy, index}
-		<div in:fade={{ duration: 300, delay: index * 100 }} class="mr-2 mt-2">
+		<div in:fade={{ duration: 300, delay: index * 100 }} out:fade class="mr-2 mt-2">
 			<ProviderPreview provider={{ ...buy, icon: Film }} />
 		</div>
 	{/each}
