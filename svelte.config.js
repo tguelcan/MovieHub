@@ -18,7 +18,7 @@ const config = {
 
 		vite: {
 			ssr: {
-				noExternal: ['svelte-hero-icons']
+				noExternal: ['svelte-hero-icons', 'swiper']
 			},
 			resolve: {
 				alias: {
