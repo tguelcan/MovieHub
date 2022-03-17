@@ -31,7 +31,7 @@ jobs:
         id: create-json-2  # Second ID
         uses: jsdaniell/create-json@1.1.2
         with:
-          name: "other.json"
+          name: "package.json"
           json: '{"name": "rpclive", "version": "1.0.0", "main": "index.js", "type": "module"}'
           dir: 'dist/'
         
