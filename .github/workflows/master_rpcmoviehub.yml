@@ -27,6 +27,14 @@ jobs:
           npm run build --if-present
           # npm run test --if-present
 
+      - name: create package.json file
+        id: create-json-2  # Second ID
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "other.json"
+          json: '{"name": "rpclive", "version": "1.0.0", "main": "index.js", "type": "module"}'
+          dir: 'dist/'
+        
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
