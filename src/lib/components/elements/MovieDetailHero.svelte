@@ -35,14 +35,20 @@
 					{/if}
 				{/each}
 			</div>
-			<Rating value={movie.vote_average} />
+			{#if movie.vote_average}
+				<Rating value={movie.vote_average} />
+			{/if}
 		</div>
 		<div class="text-xs flex items-center space-x-1 text-gray font-medium">
-			<div>{getYear(movie.release_date)}</div>
-			<div class="flex items-center ">
-				<Icon src={Clock} class="w-3" />
-				<span>{movie.runtime}</span>
-			</div>
+			{#if movie.release_date}
+				<div>{getYear(movie.release_date)}</div>
+			{/if}
+			{#if movie.runtime}
+				<div class="flex items-center ">
+					<Icon src={Clock} class="w-3" />
+					<span>{movie.runtime}</span>
+				</div>
+			{/if}
 		</div>
 		<div class="max-w-2xl">
 			<p class="mt-2">{movie.overview}</p>

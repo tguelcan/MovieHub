@@ -10,14 +10,18 @@
 <a href="/{movie.id}" sveltekit:prefetch class="bg-light dark:bg-gray-dark dark:text-gray-light ">
 	<div class="overflow-hidden relative group rounded-lg sm:rounded-xl">
 		<div class="absolute flex flex-col justify-between w-full h-full z-20 text-light">
-			<div class="p-6">
-				<Rating value={movie.vote_average} />
-			</div>
+			{#if movie.vote_average}
+				<div class="p-6">
+					<Rating value={movie.vote_average} />
+				</div>
+			{/if}
 			<div class="p-6 flex flex-col space-y-1">
 				<div class="sm:text-lg font-secondary font-bold transition-all">
 					{movie.title}
 				</div>
-				<div class="text-xs">{getYear(movie.release_date)}</div>
+				{#if movie.release_date}
+					<div class="text-xs">{getYear(movie.release_date)}</div>
+				{/if}
 			</div>
 		</div>
 		<div
