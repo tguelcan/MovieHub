@@ -27,9 +27,11 @@ jobs:
           npm run build --if-present
           # npm run test --if-present
 
-      - name: copy package.json
-        run: |
-          copy package.json build\package.json
+      - name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+          source: "package.json"
+          target: "build/package.json"
           
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
