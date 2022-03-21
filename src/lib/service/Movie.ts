@@ -1,7 +1,5 @@
 import { variables } from '$lib/variables';
 
-console.log(variables);
-
 const baseUrl = variables.movieUrl;
 // Apply all headers
 const headers = {
