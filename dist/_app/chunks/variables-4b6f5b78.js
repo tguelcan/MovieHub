@@ -1,1 +1,0 @@
-const N={movieUrl:"https://api.themoviedb.org/3",movieToken:"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhNDk5NjNjMTVjM2VjYWFmNzY5NDViMTJkYWUxNmY3ZSIsInN1YiI6IjYyMmE0MmIzNzcwNzAwMDA2ZTJmZWM3NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NBnCnq2YR76te9fsphOLt352RHyhB3rekNu6xs2Pz9A"};export{N as v};
