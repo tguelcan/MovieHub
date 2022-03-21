@@ -27,14 +27,16 @@
 		<div
 			class="text-xs flex items-center justify-between sm:justify-start space-x-6 mt-2 text-gray"
 		>
-			<div class="flex space-x-1 items-center">
-				{#each movie.genres as genre, index}
-					<div>{genre.name}</div>
-					{#if movie.genres.length - 1 !== index}
-						<div>|</div>
-					{/if}
-				{/each}
-			</div>
+			{#if movie.genres}
+				<div class="flex space-x-1 items-center">
+					{#each movie.genres as genre, index}
+						<div>{genre.name}</div>
+						{#if movie.genres.length - 1 !== index}
+							<div>|</div>
+						{/if}
+					{/each}
+				</div>
+			{/if}
 			{#if movie.vote_average}
 				<Rating value={movie.vote_average} />
 			{/if}
