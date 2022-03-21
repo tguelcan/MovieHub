@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
+          node-version: '14.x'
 
       - name: npm install, build, and test
         run: |
@@ -28,7 +28,7 @@ jobs:
           # npm run test --if-present
 
       - name: create package.json file
-        id: create-json-2  # Second ID
+        id: create-json-1
         uses: jsdaniell/create-json@1.1.2
         with:
           name: "package.json"
